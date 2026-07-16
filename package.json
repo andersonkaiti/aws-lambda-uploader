@@ -1,0 +1,19 @@
+{
+  "name": "aws-lambda-uploader",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "prepare": "husky"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "2.5.4",
+    "@commitlint/types": "^21.2.0",
+    "@types/aws-lambda": "^8.10.162",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "tsup": "^8.5.1",
+    "typescript": "^7.0.2"
+  }
+}

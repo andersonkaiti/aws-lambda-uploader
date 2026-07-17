@@ -5,6 +5,7 @@ phases:
     runtime-versions:
       nodejs: 24
     commands:
+      - mkdir -p /tmp/bin
       - corepack enable --install-directory /tmp/bin
       - export PATH="/tmp/bin:$PATH"
   pre_build:

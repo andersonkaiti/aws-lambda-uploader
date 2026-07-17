@@ -1,3 +1,6 @@
 import { S3Client } from '@aws-sdk/client-s3'
+import { env } from '../config/env.ts'
 
-export const s3Client = new S3Client()
+export const s3Client = new S3Client({
+  region: env.BUCKET_REGION,
+})

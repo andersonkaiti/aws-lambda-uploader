@@ -7,9 +7,11 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.1088.0",
     "@biomejs/biome": "2.5.4",
     "@commitlint/types": "^21.2.0",
     "@types/aws-lambda": "^8.10.162",
+    "@types/node": "^26.1.1",
     "commitlint-config-gitmoji": "^2.3.1",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",

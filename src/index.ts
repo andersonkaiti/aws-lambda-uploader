@@ -1,10 +1,17 @@
 import type { APIGatewayProxyEvent } from 'aws-lambda'
+import parser from 'lambda-multipart-parser'
+import { response } from './utils/response.ts'
 
-export async function handler(_event: APIGatewayProxyEvent) {
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: 'Hello, from Lambda!',
-    }),
+export async function handler(event: APIGatewayProxyEvent) {
+  const {
+    files: [file],
+  } = await parser.parse(event)
+
+  if (!file) {
+    return response(400, {
+      error: 'File is required.',
+    })
   }
+
+  return response(200, {})
 }

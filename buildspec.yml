@@ -5,8 +5,8 @@ phases:
     runtime-versions:
       nodejs: 24
     commands:
-      - corepack enable
-      - corepack prepare pnpm@latest --activate
+      - corepack enable --install-directory /tmp/bin
+      - export PATH="/tmp/bin:$PATH"
   pre_build:
     commands:
       - pnpm install --frozen-lockfile

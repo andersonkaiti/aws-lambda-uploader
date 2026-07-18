@@ -4,6 +4,7 @@
   "scripts": {
     "build:conventional": "cd conventional && tsup",
     "build:presigned": "cd presigned && tsup",
+    "build:get-presigned": "cd get-presigned && tsup",
     "prepare": "husky"
   },
   "license": "ISC",

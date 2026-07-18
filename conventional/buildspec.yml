@@ -13,8 +13,8 @@ phases:
       - pnpm install --frozen-lockfile
   build:
     commands:
-      - pnpm build
+      - pnpm build:conventional
   post_build:
     commands:
-      - cd dist && zip -r ../function.zip . && cd ..
-      - aws lambda update-function-code --function-name "$FUNCTION_NAME" --zip-file fileb://function.zip
+      - cd conventional/dist && zip -r ../function.zip . && cd ../..
+      - aws lambda update-function-code --function-name "$FUNCTION_NAME" --zip-file fileb://conventional/function.zip

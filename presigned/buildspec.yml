@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 24
+    commands:
+      - mkdir -p /tmp/bin
+      - corepack enable --install-directory /tmp/bin
+      - export PATH="/tmp/bin:$PATH"
+  pre_build:
+    commands:
+      - pnpm install --frozen-lockfile
+  build:
+    commands:
+      - pnpm build:presigned
+  post_build:
+    commands:
+      - cd presigned/dist && zip -r ../function.zip . && cd ../..
+      - aws lambda update-function-code --function-name "$FUNCTION_NAME" --zip-file fileb://presigned/function.zip

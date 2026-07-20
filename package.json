@@ -1,6 +1,7 @@
 {
   "name": "aws-lambda-uploader",
   "type": "module",
+  "packageManager": "pnpm@11.5.0",
   "scripts": {
     "build:conventional": "cd conventional && tsup",
     "build:presigned": "cd presigned && tsup",

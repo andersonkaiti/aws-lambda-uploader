@@ -1,0 +1,2 @@
+# Normalize line endings to LF (matches Biome's default formatting)
+* text=auto eol=lf

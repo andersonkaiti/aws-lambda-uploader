@@ -5,6 +5,8 @@
     "build:conventional": "cd conventional && tsup",
     "build:presigned": "cd presigned && tsup",
     "build:get-presigned": "cd get-presigned && tsup",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome ci",
     "prepare": "husky"
   },
   "license": "ISC",
